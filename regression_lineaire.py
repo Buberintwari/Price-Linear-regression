@@ -148,3 +148,10 @@ def log_prediction(features, prediction):
 log_prediction([75], model.predict(scaler.transform([[75]])))
 
 print("\n=== Processus terminé avec succès ===")
+
+# Charger le modèle et le scaler sauvegardés
+model = joblib.load('models/linear_regression_model.pkl')
+scaler = joblib.load('models/scaler.pkl')
+
+# Faire une prédiction pour 22m²
+make_prediction(model, scaler, 22)
